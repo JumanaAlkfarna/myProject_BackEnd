@@ -1,0 +1,835 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Mirza:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Pacifico&family=Playfair+Display:wght@400;500;700;900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+/* font-family: 'Mirza', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Montserrat:wght@200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Pacifico&family=Playfair+Display:wght@400;500;700;900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+/* font-family: 'Noto Kufi Arabic', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+:root {
+  --mainColor: #3e4555;
+  --secOneColor: #24aae1;
+  --secTwoColor: #f15929;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+body{
+    overflow-x: hidden;
+}
+
+/* Heroo page */
+main {
+  height: 100vh;
+  background-color: var(--mainColor);
+}
+
+.page-loader.fade-out {
+    opacity: 1;
+    transition: all 0.6s ease;
+  }
+
+  .page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    display: flex;
+  }
+  .page-loader div {
+    margin: auto;
+    height: 38px;
+    width: 38px;
+    border: 4px solid var(--mainColor);
+    position: relative;
+    -webkit-animation: loader 2s linear infinite;
+            animation: loader 2s linear infinite;
+  }
+  .page-loader div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainColor);
+    -webkit-animation: loaderIn 2s linear infinite;
+            animation: loaderIn 2s linear infinite;
+  }
+  .page-loader div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainColor);
+    -webkit-animation: loaderIn 2s linear infinite;
+            animation: loaderIn 2s linear infinite;
+  }
+
+  @-webkit-keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    25%, 50% {
+      transform: rotate(180deg);
+    }
+    75%, 100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    25%, 50% {
+      transform: rotate(180deg);
+    }
+    75%, 100% {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes loaderIn {
+    0%, 25%, 100% {
+      height: 0%;
+    }
+    50%, 75% {
+      height: 100%;
+    }
+  }
+  @keyframes loaderIn {
+    0%, 25%, 100% {
+      height: 0%;
+    }
+    50%, 75% {
+      height: 100%;
+    }
+  }
+
+nav {
+  padding: 27px 0px !important;
+  transition: 0.3s;
+}
+
+/* To change for Slider */
+.navBB {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  background-color: var(--mainColor);
+  z-index: 99;
+}
+
+.nav .dropdown-menu .dropdown-item {
+   font-size: 22px;
+   color: var(--mainColor) !important ;
+   /* border-bottom: 1px solid var(--mainColor); */
+}
+
+.navbar-brand {
+  background: linear-gradient(130deg, #24aae1, #f15929)
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+.navbar-brand img {
+  width: 70px;
+  height: 65px;
+}
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  font-size: 19px;
+}
+
+/* Drop Down */
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  /* padding: 16px; */
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+/* .dropbtn:hover, .dropbtn:focus {
+      background-color: #2980B9;
+    } */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: var(--mainColor);
+  color: white;
+}
+
+/* .dropdown a:hover {background-color: #ddd;} */
+
+.show {
+  display: block;
+}
+
+/* Drop Down */
+/* jsh */
+.offcanvas {
+  background-color: #25717b;
+  color: white;
+}
+/* Start Hero */
+.hero {
+    /* position: relative; */
+}
+.header {
+  padding-top: 70px;
+    text-align: center;
+  color: var(--whiteColor);
+}
+.header .row {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+h1 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 55px;
+}
+h1 p {
+  padding-left: 200px;
+  font-size: 55px;
+}
+
+.hero p {
+  font-size: 35px;
+  padding-top: 20px;
+  color: white;
+
+  /* font-weight: 500; */
+}
+.col.circ {
+    position: relative;
+}
+.big {
+    width: 345px;
+    height: 345px;
+    background: linear-gradient(130deg, #24aae1, #f15929);
+    position: relative;
+    left: 20%;
+    top:13%;
+    border-radius: 50%;
+    padding: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+}
+.big .text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 20s linear infinite;
+
+}
+@keyframes rotateText {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.big .text span {
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top:-10px;
+    font-size: 1.2em;
+    transform-origin: 0 172.5px;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.arrowDown {
+    background-color: transparent;
+    border: transparent;
+    color: white;
+    font-size: 30px;
+}
+
+/* End Hero */
+
+.MAIN {
+  background-color: var(--mainColor);
+}
+
+
+/* MyCar */
+
+.please {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.please  a{
+
+  text-decoration: none;
+  background-color: var(--mainColor);
+  width: 200px;
+  height: 100px;
+  /* display: inline-block; */
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 20px 20px;
+}
+.please a i{
+ font-size: 35px;
+ padding-top: 10px;
+ padding-right: 10px;
+}
+.cars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.car {
+  width: 340px;
+  /* min-height: 150px; */
+  background-color: white;
+  padding-left: 10px;
+  /* padding-right: 10px; */
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 20px 5px 20px 15px ;
+  margin-right: 30px;
+}
+
+.car.time i {
+  font-size: 30px;
+
+}
+.car i {
+  font-size: 50px;
+
+}
+.car {
+  border-left: 3px solid var(--mainColor);
+}
+.car .col-10 i,
+.car .col-9 i{
+  font-size: 20px;
+}
+.car .col-10 button,
+.car .col-9 button{
+  background-image: linear-gradient(130deg, #24abe1c2 , #f15829c0);
+}
+
+/*  Car Details */
+.head label {
+  font-size: 25px;
+  color: var(--mainColor);
+  margin-bottom: 20px;
+  display: inline-block;
+  margin-left: 50px;
+
+}
+
+select {
+  width: 420px;
+  height: 50px;
+  border-radius: 10px;
+  border-color: transparent;
+  border-bottom: 2px solid var(--mainColor);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 0px 20px;
+  font-size: 20px;
+  margin-left: 50px;
+}
+.add {
+
+  background: linear-gradient(130deg, #24aae1, #f15929);
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 40px;
+}
+.en {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.bt {
+    position: relative;
+
+}
+ .bt  a {
+  width: 47px;
+  height: 47px;
+  border: 2px solid #3e4555 ;
+  border-radius: 50%;
+  padding: 10px 13px;
+  margin: 15px 0px 0px 25px;
+  position: absolute;
+}
+.bt i {
+    font-size: 25px;
+    color: var(--mainColor)
+}
+
+.time .col {
+  margin: auto;
+}
+/* Oil */
+ul {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+h4 {
+    position: relative;
+}
+h4  input{
+  position: absolute;
+  top:15%;
+  left:20%;
+}
+h4.pp {
+    text-align: center;
+    background-image: linear-gradient(130deg, #24abe1c2 , #f15829c0);
+    width: 200px;
+    height: 50px;
+    left:43%;
+    margin-top: 100px;
+}
+ .pp {
+
+  text-align: center;
+  border-color: transparent;
+  /* background-image: linear-gradient(130deg, #24abe1c2 , #f15829c0); */
+  padding: 7px 20px;
+  border-radius: 10px;
+  color: var(--mainColor);
+  font-size: 19px;
+  font-weight: 600;
+  background-color: transparent;
+  border:2px solid var(--mainColor);
+  border-radius:10px;
+
+
+
+}
+.retu {
+    background-color: var(--mainColor);
+    color: white ;
+}
+ .pp.active {
+
+    background-image: linear-gradient(130deg, #24abe1c2 , #f15829c0);
+
+}
+.main-carousel {
+  width: 100%;
+  padding-bottom: 30px;
+}
+.cell {
+  width: 220px;
+  height: 215px;
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color: white;
+  margin-left: 30px;
+  border-top: 3px solid var(--mainColor);
+  padding: 20px 0px;
+  margin-bottom: 10px;
+}
+.cell img {
+  width: 80px;
+  height: 80px;
+}
+
+.flickity-page-dots .is-selected {
+  /* bottom: -14% !important; */
+  background-color: var(--mainColor) !important;
+}
+
+/* .tenOil .main-carousel .cell:first-child {
+    position: absolute; left: 0px; transform: translateX(0%);
+}
+.tenOil .main-carousel .cell:nth-child(2) {
+    position: absolute; left: 0px; transform: translateX(115%);
+}
+.tenOil .main-carousel .cell:nth-child(3) {
+    position: absolute; left: 0px; transform: translateX(230%);
+}
+.tenOil .main-carousel .cell:nth-child(4) {
+    position: absolute; left: 0px; transform: translateX(345%);
+}
+.tenOil .main-carousel .cell:nth-child(5) {
+    position: absolute; left: 0px; transform: translateX(460%);
+}
+.tenOil .main-carousel .cell:nth-child(6) {
+    position: absolute; left: 0px; transform: translateX(585%);
+}
+.tenOil .main-carousel .cell:nth-child(7) {
+    position: absolute; left: 0px; transform: translateX(600%);
+}
+.tenOil .main-carousel .cell:nth-child(8) {
+    position: absolute; left: 0px; transform: translateX(615%);
+}
+.tenOil .main-carousel .cell:nth-child(9) {
+    position: absolute; left: 0px; transform: translateX(730%);
+}
+.tenOil .main-carousel .cell:nth-child(10) {
+    position: absolute; left: 0px; transform: translateX(845%);
+}
+.tenOil .main-carousel .cell:nth-child(11) {
+    position: absolute; left: 0px; transform: translateX(960%);
+}
+.tenOil .main-carousel .cell:nth-child(12) {
+    position: absolute; left: 0px; transform: translateX(1085%);
+}
+.tenOil .main-carousel .cell:nth-child(13) {
+    position: absolute; left: 0px; transform: translateX(1200%);
+}
+.tenOil .main-carousel .cell:nth-child(14) {
+    position: absolute; left: 0px; transform: translateX(1315%);
+} */
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: white;
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: var(--mainColor);
+  width: 1.35em;
+  height: 1.35em;
+  border: 0.15em solid var(--secTwoColor);
+  border-radius: 0.15em;
+  /* transform: translateY(-0.075em); */
+    transform: translateX(-22px);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]:checked {
+
+  background-color: var(--secTwoColor);
+
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.80em;
+  height: 0.80em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em white;
+
+}
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+
+}
+input[type="checkbox"]::before {
+  /* ...existing styles */
+
+  /* Windows High Contrast Mode */
+  background-color: var(--secTwoColor);
+}
+input[type="checkbox"]::before {
+  /* ...existing styles */
+
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.tab-pane {
+  position: relative;
+}
+.oty {
+  position: absolute;
+  top: 18%;
+  right: 47%;
+  z-index: 100;
+}
+.oty input {
+  width: 50px !important;
+  height: 30px;
+  text-align: center;
+  font-size: 18px;
+
+}
+
+ .oty .btn {
+  width: 25px;
+  font-size: 12px;
+  height: 30px;
+  text-align: center;
+  padding-left: 5px;
+  padding-top: 5px;
+  border-radius: 0%;
+  border: 1px solid var(--mainColor);
+  cursor: alias;
+  background-color: var(--mainColor);
+  color:white;
+
+
+}
+
+.cell span {
+  font-weight: 600;
+  color: var(--mainColor);
+}
+.cell .price {
+  color: var(--secTwoColor);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label::before {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border: 2px solid var(--secTwoColor);
+  border-radius: 5px;
+  vertical-align: middle;
+  padding: 7px 3px;
+  position: absolute;
+  left: 12%;
+
+}
+
+input[type="radio"]:checked + label::before {
+  content: "\2713"; /* check mark symbol */
+  color: #fff;
+  background-color: var(--secTwoColor); /* green background color for selected radio button */
+  text-align: center;
+  line-height: 5px;
+  font-size: 20px;
+}
+
+.foot {
+  position: fixed;
+  background: linear-gradient(130deg, #24aae1, #f15929);
+  bottom: 0;
+  padding: 18px;
+  width: 100%;
+}
+.foot p {
+  font-size: 20px;
+  color: white;
+}
+.foot button {
+ background-color: var(--mainColor);
+ color: white;
+ font-size: 17px;
+}
+
+
+.calen .row {
+ width: 50% ;
+ margin: auto;
+}
+.calen label {
+  color: var(--mainColor);
+  font-size: 20px;
+}
+.calen input {
+  color: var(--mainColor);
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+/* Product */
+.product {
+  height: 100vh;
+
+}
+.product p {
+  font-size: 22px;
+  color: var(--mainColor);
+  font-weight: 600;
+}
+.coupon {
+    border: 0px;
+    background-color: var(--mainColor);
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.table th {
+ background-color: var(--mainColor);
+ color: white
+}
+table {
+  margin-bottom: 0px !important;
+
+}
+.tt {
+  border: 2px solid #3e4555;
+  width: 50%;
+  margin: auto;
+  border-radius: 10px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  color: var(--mainColor);
+  font-weight: 600;
+
+}
+.total span {
+    color:var(--secTwoColor);
+}
+.offcanvas-end {
+  background-color: var(--mainColor);
+}
+
+@media (max-width:1115px) {
+  select {
+   margin-left: 0px;
+  }
+}
+
+@media (max-width:886px) {
+  select {
+    width: 320px;
+    height: 45px;
+  }
+  .calen .row {
+    width: 60% ;
+    margin: auto;
+   }
+}
+@media (max-width:730px) {
+  h1 {
+    font-size: 40px;
+  }
+  h1 p {
+    font-size: 40px;
+    padding-left: 80px;
+  }
+  .calen .row {
+    width:70% ;
+    margin: auto;
+   }
+}
+
+@media (max-width:540px) {
+  h1 {
+    font-size: 30px;
+  }
+  h1 p {
+    font-size: 30px !important;
+    padding-left: 0px;
+  }
+  h1{
+   max-width: 500px;
+    text-align: center;
+    /* margin-left: 100px; */
+  }
+  .header {
+    text-align: center;
+  }
+
+   .calen .row {
+    width: 100% ;
+    margin: auto;
+   }
+
+}
+
+@media (max-width:444px) {
+    .car {
+        width: 250px;
+        margin-right: 0px;
+    }
+
+  }
+@media (max-width:380px) {
+  select {
+    width: 250px;
+    height: 45px;
+  }
+  .head label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+}
+
+@media (max-width:260px) {
+  h2 {
+    font-size: 25px;
+  }
+
+
+
+}

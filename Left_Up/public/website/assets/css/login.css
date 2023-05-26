@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Mirza:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Pacifico&family=Playfair+Display:wght@400;500;700;900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+/* font-family: 'Mirza', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Montserrat:wght@200;300;400;500;600;700&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Pacifico&family=Playfair+Display:wght@400;500;700;900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+/* font-family: 'Noto Kufi Arabic', sans-serif; */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+:root {
+  --mainColor: #3e4555;
+  --secOneColor: #24aae1;
+  --secTwoColor:#f15929 ;
+}
+a{
+    text-decoration: none;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: var(--mainColor);
+}
+.number .row .col {
+    /* height: 570px; */
+    padding: 0px 60px;
+}
+
+.number .logo {
+    position: relative;
+}
+.img{
+  margin-left: 150px;
+  padding-top: 50px;
+
+}
+.img img{
+ /* position: absolute; */
+  width: 190px;
+  height: 170px;
+}
+h1 {
+    font-weight: bold;
+    font-size: 60px;
+    background: linear-gradient(130deg, #24aae1, #f15929)
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.verification {
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+}
+.verification input {
+  border-radius: 10px;
+  padding: 5px 20px 5px 50px;
+  /* max-width: 700px ; */
+}
+.loooog {
+  position: absolute;
+  top: 40%;
+  left: -5%;
+}
+.loooog button {
+  background-color: white;
+  color:var(--mainColor);
+  padding: 5px 20px;
+  border-radius: 10px;
+  border-color: transparent;
+  /* margin-right: 50px; */
+}
+.ttext {
+  max-width: 250px;
+}
+h2 {
+  font-size: 50px;
+  padding-bottom: 10px;
+  background: linear-gradient(130deg, #24aae1, #f15929)
+  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+/* Register */
+.regis {
+  top:15%;
+}
+
+
+@media (max-width:1115px) {
+  h1 {
+    font-size: 45px;
+  }
+
+}
+@media (max-width:1028px) {
+      .img {
+      margin-left: 50px;
+    }
+
+
+
+}
+@media (max-width:840px) {
+  .img{
+    margin-left: 0px;
+  }
+
+
+}
+@media (max-width:768px) {
+  .img{
+    padding-top: 0px;
+  }
+  .loooog {
+    left: 5%;
+  }
+ .img img {
+    width: 125px;
+    height: 120px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2{
+    border-top: 1px solid #aaa;
+    font-size: 25px;
+    padding-bottom: 0px;
+    padding-top: 20px;
+  }
+
+
+}
+@media (max-width:355px) {
+
+  h1 {
+    font-size: 25px;
+  }
+  h2{
+    border-top: 1px solid #aaa;
+    font-size: 25px;
+    padding-bottom: 0px;
+    padding-top: 20px;
+  }
+ .loooog {
+  left: 0%;
+ }
+  .loooog input {
+    padding: 5px 20px;
+  }
+}
